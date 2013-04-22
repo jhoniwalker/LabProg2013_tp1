@@ -1,0 +1,60 @@
+package ar.edu.untdf.labprog.tp1.ejer4.sol;
+
+/**
+ *
+ * @author Matias
+ */
+public class ListaInt {
+    
+    private boolean tf;
+    private int b;
+    private Ordenar O = null;
+    private int[] lista;
+    public ListaInt(int[] list){
+    lista=list;
+    }
+    public void sort(String tipo){
+        if (tipo.equals("quicksort"))
+             new OrdenMerge().ordenar(lista);
+                    else 
+            if (tipo.equals("mergesort"))
+              new  OrdenQuick().ordenar(lista);
+    }  
+        
+    public void search(String tipo){
+        if (tipo.equals("binary"))
+        tf = new BuscaBinary().buscar(lista,b);
+                 
+    }
+    
+    public void printMe(){
+        System.out.println();
+        System.out.print("(");
+        for(int x:lista){
+            System.out.print(x);
+            System.out.print(" ");
+        }
+        System.out.print(")");
+        System.out.println();
+    }
+    
+    public void print(){
+    if(tf == true)
+     System.out.println("esta");
+    else
+     System.out.println("no se encuentra");   
+    
+    
+    }
+    
+    public void setNumber(int b){
+       this.b = b; 
+        
+    }
+            
+}
+
+
+
+
+
