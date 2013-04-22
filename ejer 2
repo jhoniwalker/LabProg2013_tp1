@@ -1,0 +1,24 @@
+// clase adapter
+
+
+
+package ar.edu.untdf.labprog.tp1.ejer2.sol;
+
+/**
+ *
+ * @author User
+ */
+public class Adapter implements Conn {
+   MsSqlServer server = null;
+   
+   public Adapter() {
+   
+   server = new MsSqlServer();
+   }
+   
+   public void connect()
+   {
+     server.getConnect();
+   }
+
+
